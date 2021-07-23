@@ -11,7 +11,9 @@
   "paths": {
     "/categories": {
       "post": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "Creates a category",
         "description": "Creates a new cars category",
         "requestBody": {
@@ -45,7 +47,9 @@
         }
       },
       "get": {
-        "tags": ["Category"],
+        "tags": [
+          "Category"
+        ],
         "summary": "List all categories",
         "description": "List all categories",
         "responses": {
@@ -68,6 +72,20 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/specifications": {
+      "post": {
+        "tags": [
+          "Specifications"
+        ],
+        "summary": "Creates a specification",
+        "description": "Creates a new cars specification",
+        "requestBody": {
+          "content": {
+            "application/json": {}
           }
         }
       }
