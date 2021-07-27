@@ -9,7 +9,7 @@ interface IRequest {
   password: string;
 }
 
-interface IResponse {
+interface IAuthenticateResponse {
   user: {
     name: string;
     email: string;
@@ -24,15 +24,13 @@ class AuthenticateUserUseCase {
     private usersRepository: IUsersRepository,
   ) {}
 
-  async execute({ email, password }: IRequest): Promise<IResponse> {
+  async execute({ email, password }: IRequest): Promise<IAuthenticateResponse> {
     const user = await this.usersRepository.findByEmail(email);
-
     if (!user) {
       throw new Error("email or password incorrect");
     }
 
     const passwordMatch = await compare(password, user.password);
-
     if (!passwordMatch) {
       throw new Error("email or password incorrect");
     }
