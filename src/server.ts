@@ -6,7 +6,7 @@ import { errorTreatment } from "./middlewares/errorTreatment";
 import { router } from "./routes";
 import swaggerFile from "./swagger.json";
 import "./database";
-import "./shared/container";
+import "@shared/container";
 
 const app = express();
 

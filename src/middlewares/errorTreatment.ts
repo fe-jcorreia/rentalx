@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 import "express-async-errors";
-import { AppError } from "../errors/AppError";
+import { AppError } from "@errors/AppError";
 
 export function errorTreatment(
   err: Error,
