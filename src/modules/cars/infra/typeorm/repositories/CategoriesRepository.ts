@@ -1,11 +1,10 @@
 import { getRepository, Repository } from "typeorm";
 
+import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "@modules/cars/repositories/ICategoriesRepository";
-
-import { Category } from "../entities/Category";
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -15,6 +14,12 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   /*
+  private static INSTANCE: CategoriesRepository;
+
+  private constructor() {
+    this.categories = []; 
+  }
+  
   public static getInstance(): CategoriesRepository {
     if (!CategoriesRepository.INSTANCE) {
       CategoriesRepository.INSTANCE = new CategoriesRepository();

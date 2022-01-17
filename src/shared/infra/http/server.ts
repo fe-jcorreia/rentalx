@@ -1,12 +1,11 @@
 import "reflect-metadata";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
+import swaggerFile from "swagger.json";
 
 import { errorTreatment } from "@shared/infra/http/middlewares/errorTreatment";
 import { router } from "@shared/infra/http/routes";
 import createConnection from "@shared/infra/typeorm";
-
-import swaggerFile from "../../../swagger.json";
 
 import "@shared/container";
 

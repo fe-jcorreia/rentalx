@@ -2,9 +2,9 @@
   "type": "postgres",
   "port": 5432,
   "host": "localhost",
-  "username": "docker",
-  "password": "ignite",
-  "database": "rentx", 
+  "username": "rentalx_admin",
+  "password": "rentalx123",
+  "database": "rentalx", 
   "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "entities": ["./src/modules/**/entities/*.ts"],
   "cli": {
