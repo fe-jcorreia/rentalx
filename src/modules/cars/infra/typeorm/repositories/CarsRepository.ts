@@ -38,12 +38,30 @@ class CarsRepository implements ICarsRepository {
     return car;
   }
 
-  findAvailable(
+  async findAvailable(
     brand?: string,
     category_id?: string,
     name?: string,
   ): Promise<Car[]> {
-    throw new Error("Method not implemented.");
+    const carsQuery = await this.repository
+      .createQueryBuilder("car")
+      .where("available = :available", { available: true });
+
+    if (brand) {
+      carsQuery.andWhere("brand = :brand", { brand });
+    }
+
+    if (name) {
+      carsQuery.andWhere("name = :name", { name });
+    }
+
+    if (category_id) {
+      carsQuery.andWhere("category_id = :category_id", { category_id });
+    }
+
+    const carsAvailable = await carsQuery.getMany();
+
+    return carsAvailable;
   }
 }
 
